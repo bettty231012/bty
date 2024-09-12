@@ -20,6 +20,10 @@
             align-items: center;
             height: 100vh;
             flex-direction: column;
+            transition: opacity 1s ease-out; /* 페이드 아웃 애니메이션 */
+        }
+        body.fade-out {
+            opacity: 0;
         }
         input[type="password"] {
             padding: 10px;
@@ -65,9 +69,16 @@
             if (password === "0912") {
                 document.getElementById("loading").style.display = "block";  // 로딩 메시지 표시
                 errorMessage.innerText = "";  // 오류 메시지 초기화
+                
+                // 페이드 아웃 효과 추가
+                setTimeout(function() {
+                    document.body.classList.add("fade-out"); // 화면 페이드 아웃
+                }, 500);  // 0.5초 후 페이드 아웃 시작
+
+                // 페이드 아웃 후 리디렉션
                 setTimeout(function() {
                     window.location.href = "https://lookerstudio.google.com/reporting/6a5491c3-4c5a-49b9-b33f-ffac27b817c5";
-                }, 500);  // 1.5초 후 리디렉션
+                }, 1500);  // 1.5초 후 리디렉션
             } else {
                 errorMessage.innerText = "비밀번호가 틀렸습니다. 다시 시도하세요.";
                 document.getElementById("password").value = '';  // 비밀번호 필드 초기화
