@@ -54,9 +54,9 @@
     </style>
 
     <script>
-        window.onload = function() {
+        document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("password").focus();
-        };
+        });
 
         function checkPassword() {
             var password = document.getElementById("password").value;
@@ -67,7 +67,7 @@
                 errorMessage.innerText = "";  // 오류 메시지 초기화
                 setTimeout(function() {
                     window.location.href = "https://lookerstudio.google.com/reporting/6a5491c3-4c5a-49b9-b33f-ffac27b817c5";
-                }, 1500);  // 1.5초 후 리디렉션
+                }, 500);  // 1.5초 후 리디렉션
             } else {
                 errorMessage.innerText = "비밀번호가 틀렸습니다. 다시 시도하세요.";
                 document.getElementById("password").value = '';  // 비밀번호 필드 초기화
