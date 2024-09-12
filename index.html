@@ -50,7 +50,7 @@
             border-radius: 5px;
         }
         #loading {
-            display: none;
+            display: none; /* 기본적으로 숨김 */
             position: absolute;
             top: 0;
             left: 0;
@@ -105,7 +105,7 @@
             var errorMessage = document.getElementById("error-message");
 
             if (password === "0912") {
-                document.getElementById("loading").style.display = "flex";  // 로딩 메시지 표시
+                document.getElementById("loading").style.display = "flex";  // 비밀번호가 맞을 때만 로딩 메시지 표시
                 errorMessage.innerText = "";  // 오류 메시지 초기화
                 document.getElementById("password").classList.remove("error");
                 
