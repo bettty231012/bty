@@ -12,12 +12,24 @@
     <meta property="og:image" content="https://i.ibb.co/Jsk0Xtr/20240912-104818.png"> <!-- Imgbb 원본 이미지 링크 -->
     <meta property="og:url" content="https://mellifluous-narwhal-f4baed.netlify.app"> <!-- Netlify URL -->
 
-    <!-- 1초 후 자동 리디렉션 -->
-    <meta http-equiv="refresh" content="0;url=https://lookerstudio.google.com/reporting/6a5491c3-4c5a-49b9-b33f-ffac27b817c5">
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "0912") {  // 비밀번호 설정
+                window.location.href = "https://lookerstudio.google.com/reporting/6a5491c3-4c5a-49b9-b33f-ffac27b817c5";
+            } else {
+                alert("비밀번호가 틀렸습니다. 다시 시도하세요.");
+            }
+        }
+    </script>
 
 </head>
 <body>
-    <h1>Redirecting to Looker Studio Report...</h1>
+    <h1>리디렉션을 위한 비밀번호 입력</h1>
+    <p>리디렉션을 하려면 비밀번호를 입력하세요:</p>
+    <input type="password" id="password" placeholder="비밀번호 입력">
+    <button onclick="checkPassword()">리디렉션</button>
+
     <p>If you are not redirected, <a href="https://lookerstudio.google.com/reporting/6a5491c3-4c5a-49b9-b33f-ffac27b817c5">click here to view the report</a>.</p>
 </body>
 </html>
