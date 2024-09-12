@@ -12,6 +12,27 @@
     <meta property="og:image" content="https://i.ibb.co/Jsk0Xtr/20240912-104818.png"> <!-- Imgbb 원본 이미지 링크 -->
     <meta property="og:url" content="https://mellifluous-narwhal-f4baed.netlify.app"> <!-- Netlify URL -->
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+
     <script>
         function checkPassword() {
             var password = document.getElementById("password").value;
@@ -22,13 +43,13 @@
             }
         }
     </script>
-
 </head>
 <body>
-    <h1> </h1>
-    <p> 비밀번호를 입력하세요:</p>
-    <input type="password" id="password" placeholder="비밀번호 입력">
-    <button onclick="checkPassword()">제출</button>
-
+    <h1>비밀번호 보호 페이지</h1>
+    <form onsubmit="event.preventDefault(); checkPassword();">
+        <p> 비밀번호를 입력하세요:</p>
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <button type="submit">제출</button>
+    </form>
 </body>
 </html>
